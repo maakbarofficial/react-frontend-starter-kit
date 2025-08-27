@@ -1,0 +1,44 @@
+/* Keep your existing spinner styles */
+.svgCalLoader {
+  width: 230px;
+  height: 230px;
+  transform-origin: 115px 115px;
+  animation: 1.4s linear infinite loader-spin;
+}
+
+.calLoaderPlane {
+  fill: #016833;
+}
+
+.calLoaderPath {
+  stroke: #c29962;
+  animation: 1.4s ease-in-out infinite loader-path;
+}
+
+/* Add new text style */
+.airlineText {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #016833; /* Changed from fill to color for HTML element */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Keep your existing animations */
+@keyframes loader-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes loader-path {
+  0% {
+    stroke-dasharray: 0, 580, 0, 0, 0, 0, 0, 0, 0;
+  }
+  50% {
+    stroke-dasharray: 0, 450, 10, 30, 10, 30, 10, 30, 10;
+  }
+  100% {
+    stroke-dasharray: 0, 580, 0, 0, 0, 0, 0, 0, 0;
+  }
+}

@@ -1,0 +1,259 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #016833;
+  --color-secondary: #07721e;
+  --color-brand: #c29962;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  @apply bg-[#ededed] dark:bg-gray-900 text-black dark:text-white;
+}
+
+.label {
+  @apply block mb-2 text-xs font-medium text-gray-900 dark:text-white;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.input {
+  @apply block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500;
+}
+
+.select {
+  @apply bg-gray-50 p-2 border border-gray-300 text-gray-900 text-xs rounded-lg block w-full dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white;
+}
+
+.button {
+  @apply text-white bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 disabled:hover:bg-blue-600 disabled:dark:hover:bg-blue-600 cursor-pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+.button-primary {
+  @apply text-white bg-secondary hover:bg-[#055114] font-medium rounded-lg text-sm px-5 py-2 disabled:hover:bg-secondary disabled:dark:hover:bg-secondary cursor-pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+.button-primary-base {
+  @apply text-white bg-secondary hover:bg-[#055114] font-medium rounded-md text-[11px] py-2 px-3 disabled:hover:bg-secondary disabled:dark:hover:bg-secondary cursor-pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+.button-primary-sm {
+  @apply text-white bg-secondary hover:bg-[#055114] font-medium rounded-lg text-[9px] px-2 py-1 disabled:hover:bg-secondary disabled:dark:hover:bg-secondary cursor-pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+.button-danger {
+  @apply text-white bg-red-700 hover:bg-red-800 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-red-600 dark:hover:bg-red-700 disabled:hover:bg-red-700 disabled:dark:hover:bg-red-700 cursor-pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+.button-danger-base {
+  @apply text-white bg-red-700 hover:bg-red-800 font-medium rounded-md text-[11px] py-2 px-3 dark:bg-red-600 dark:hover:bg-red-700 disabled:hover:bg-red-700 disabled:dark:hover:bg-red-700 cursor-pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+.button-danger-sm {
+  @apply text-white bg-red-700 hover:bg-red-800 font-medium rounded-lg text-[9px] px-2 py-1 dark:bg-red-600 dark:hover:bg-red-700 disabled:hover:bg-red-700 disabled:dark:hover:bg-red-700 cursor-pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+.status-primary {
+  @apply text-white bg-secondary font-medium rounded-lg text-[9px] px-2 py-1;
+  font-family: 'Poppins', sans-serif;
+}
+
+.status-danger {
+  @apply text-white bg-red-700 font-medium rounded-lg text-[9px] px-2 py-1 dark:bg-red-600;
+  font-family: 'Poppins', sans-serif;
+}
+
+.link {
+  @apply font-normal text-xs text-secondary hover:underline dark:text-white;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.card {
+  @apply block max-w-xl mx-auto my-10 p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700;
+}
+
+.card-min-w {
+  @apply block max-w-2xl mx-auto my-10 p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700;
+}
+
+.card-w-full {
+  @apply block w-full h-full mx-auto my-10 p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700;
+}
+
+.card-heading {
+  @apply text-xl font-medium leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white uppercase;
+  font-family: 'Poppins', sans-serif;
+}
+
+.primary-heading {
+  @apply text-xl font-medium leading-tight tracking-tight text-primary md:text-2xl dark:text-white text-center px-2 py-4 uppercase;
+  font-family: 'Poppins', sans-serif;
+}
+
+.sub-primary-heading {
+  @apply text-base font-normal leading-tight tracking-tight text-primary md:text-xl dark:text-white text-center px-2 py-4 uppercase;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.menu-tab {
+  @apply flex items-center p-3 rounded-md text-sm text-center font-bold hover:bg-secondary hover:text-white transition-colors duration-300;
+}
+
+.table {
+  @apply shadow-xl w-full text-xs text-left rtl:text-right text-black dark:text-white;
+  font-family: 'Roboto', sans-serif;
+}
+
+.table-caption {
+  @apply font-bold text-lg;
+}
+
+.table-thead {
+  @apply font-bold text-xs uppercase bg-gray-50 dark:bg-gray-700;
+}
+
+.table-thead-th {
+  @apply px-4 py-2 text-[11px] uppercase;
+}
+
+.table-tbody-tr {
+  @apply bg-white text-[11px] border-gray-200 border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600;
+}
+
+.table-tbody-th {
+  @apply px-4 py-2 text-[11px] font-semibold whitespace-nowrap text-nowrap uppercase;
+}
+
+.table-tbody-td {
+  @apply px-4 py-2 text-[11px];
+}
+
+.table-link-primary {
+  @apply font-medium text-primary dark:text-white hover:underline cursor-pointer;
+}
+
+.table-link-danger {
+  @apply font-medium text-red-600 dark:text-red-500 hover:underline cursor-pointer;
+}
+
+.table-navigation {
+  @apply inline-flex -space-x-px text-xs;
+}
+
+.table-navigation-prev-btn {
+  @apply flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white;
+}
+
+.table-navigation-button {
+  @apply flex items-center justify-center px-3 h-8 leading-tight dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white;
+}
+
+.table-navigation-button-active {
+  @apply text-primary dark:text-white font-bold border border-gray-300 bg-blue-50;
+}
+
+.table-navigation-button-inactive {
+  @apply text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700;
+}
+
+.table-navigation-next-btn {
+  @apply flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white;
+}
+
+.table-label {
+  @apply mb-2 text-xs font-medium text-gray-900 dark:text-white;
+}
+
+.table-input {
+  @apply px-1 text-gray-900 border border-gray-300 rounded-md bg-gray-50 text-xs dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white;
+}
+
+.table-search-input {
+  @apply px-1 w-100 text-gray-900 border border-black rounded-lg bg-white text-xs dark:bg-white dark:border-white dark:placeholder-gray-400 dark:text-black;
+}
+
+.table-select {
+  @apply bg-gray-50 px-1 border border-gray-300 text-gray-900 text-xs rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white;
+}
+
+.flex-center {
+  @apply flex items-center justify-center;
+}
+
+.input-suffix {
+  @apply absolute right-1 top-1/2 -translate-y-1/2 pointer-events-none font-semibold text-[8px] uppercase;
+}
+
+.pcs-input-w {
+  @apply w-7;
+}
+
+.wt-input-w {
+  @apply w-11;
+}
+
+.amount-input-w {
+  @apply w-20;
+}
+
+.percent-input-w {
+  @apply w-12;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Hide the spinners in Chrome, Safari, and Edge */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hide the spinners in Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1550px) {
+  body {
+    zoom: 90%;
+  }
+}

@@ -1,0 +1,33 @@
+# Enable rewrite engine
+RewriteEngine On
+
+# Handle serving files directly if they exist
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Fallback all other requests to crcr/index.html (for SPA routing)
+RewriteRule . /crcr/index.html [L]
+
+# Cache control for different file types
+<IfModule mod_headers.c>
+  # Cache hashed assets for 1 year
+  <FilesMatch "\.(js|css|jpg|jpeg|png|gif|webp|svg|woff2?|eot|ttf|otf|ico)(\?[a-z0-9=&\.-]+)?$">
+    Header set Cache-Control "max-age=31536000, public, immutable"
+  </FilesMatch>
+
+  # Don't cache HTML files
+  <FilesMatch "\.(html)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires 0
+  </FilesMatch>
+</IfModule>
+
+# Handle CORS (Cross-Origin Resource Sharing) if needed
+<IfModule mod_rewrite.c>
+  RewriteCond %{HTTP:Origin} ^(.*)$
+  RewriteRule .* - [E=ORIGIN:%{HTTP:Origin}]
+  Header set Access-Control-Allow-Origin "%{ORIGIN}e" env=ORIGIN
+  Header set Access-Control-Allow-Methods "GET,POST,OPTIONS,DELETE,PUT"
+  Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+</IfModule>
